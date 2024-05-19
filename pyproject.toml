@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "colalamo"
+version = "0.1.0"
+description = "colalamo you => copilot => large language model"
+authors = [
+    { name = "tolitius" },
+]
+readme = {file = "README.md", content-type = "text/markdown"}
+keywords = ["ai", "copilot", "github", "gpt", "openai", "code generation"]
+
+dependencies = []
+
+[project.scripts]
+colalamo = "colalamo:main"
+
+[project.urls]
+Homepage = "https://github.com/tolitius/colalamo"
+Documentation = "https://github.com/tolitius/colalamo?tab=readme-ov-file#-colalamo"
+Repository = "https://github.com/tolitius/colalamo"
+Issues = "https://github.com/tolitius/colalamo/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["colalamo*"]
