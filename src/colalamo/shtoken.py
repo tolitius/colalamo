@@ -5,7 +5,7 @@ import time
 import sys
 import os
 
-from config import (
+from .config import (
     GITHUB_DEVICE_CODE_URL,
     GITHUB_ACCESS_TOKEN_URL,
     GITHUB_COPILOT_TOKEN_URL,

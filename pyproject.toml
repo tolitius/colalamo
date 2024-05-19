@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "colalamo"
-version = "0.1.0001"
+version = "0.1.2102"
 description = "direct api via copilot to its large language models"
 authors = [
     { name = "tolitius" },
@@ -14,15 +14,14 @@ keywords = ["ai", "copilot", "github", "gpt", "openai", "code generation"]
 
 dependencies = []
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [project.scripts]
-colalamo = "colalamo:main"
+colalamo = "colalamo.colalamo:main"
 
 [project.urls]
 Homepage = "https://github.com/tolitius/colalamo"
 Documentation = "https://github.com/tolitius/colalamo?tab=readme-ov-file#-colalamo"
 Repository = "https://github.com/tolitius/colalamo"
 Issues = "https://github.com/tolitius/colalamo/issues"
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["colalamo*"]

@@ -9,9 +9,9 @@ import http.server
 import socketserver
 import requests
 
-import shtoken
+from . import shtoken
 
-from config import (
+from .config import (
     HEADERS,
     COPILOT_CHAT_HEADERS,
     GITHUB_COPILOT_CHAT_COMPLETIONS_URL
