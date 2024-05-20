@@ -110,6 +110,10 @@ def create_access_token(token_file):
 
     access_token = wait_for_access_token(device_code)
 
+    # don't create an invaid token file
+    if access_token is None:
+        return None
+
     with open(token_file, 'w') as f:
         f.write(access_token)
 

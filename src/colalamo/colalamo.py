@@ -27,7 +27,8 @@ class Copilot():
             intent=True,
             stream=False,
             reply_as_is=False,   # return the response as is, without any post-processing | parsing
-            model='gpt-4',
+            model='gpt-3.5-turbo',
+            max_tokens=4096,
             n=1,
             temperature=0.1,
             top_p=1):
