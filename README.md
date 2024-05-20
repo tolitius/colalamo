@@ -15,7 +15,7 @@
 
 GitHub Copilot is a well known piece of software that primarily lives inside IDE, as a plugin, and is able to help developers with autocomplete and code snippets.
 
-at times it feels Copilot is quite lonely to exist "as an IDE plugin" only, since it not open to be:
+at times it feels Copilot is quite lonely to exist "as an IDE plugin" only, since it is not open to be:
 
 * called as a function
 * called via an HTTP call
@@ -28,8 +28,8 @@ this is where `colalamo` comes in, because, as they say:
 * as a function call
 * as a proxy server that accepts HTTP requests
 
-which brings Copilot closer to developers and opens it up to anything an LLM can do: communicating agents, retrieval augmented generation,
-creating and validate user stories, explaining several source files at once, etc.
+which brings Copilot closer to developers and opens it up to anything an LLM can do: communicating agents, "retrieval augmented generation" (a.k.a. RAG),
+creating and validating user stories, explaining several source files at once, etc.
 
 # 🕹️ can I play?
 
