@@ -15,7 +15,7 @@
 
 GitHub Copilot is a well known piece of software that primarily lives inside IDE, as a plugin, and is able to help developers with autocomplete and code snippets.
 
-At times it feels Copilot is quite lonely to exist "as an IDE plugin" only, since it not open to be:
+at times it feels Copilot is quite lonely to exist "as an IDE plugin" only, since it not open to be:
 
 * called as a function
 * called via an HTTP call
@@ -28,7 +28,7 @@ this is where `colalamo` comes in, because, as they say:
 * as a function call
 * as a proxy server that accepts HTTP requests
 
-By bringing Copilot closer to developers it opens it up to anything an LLM can do: communicating agents, retrieval augmented generation,
+which brings Copilot closer to developers and opens it up to anything an LLM can do: communicating agents, retrieval augmented generation,
 creating and validate user stories, explaining several source files at once, etc.
 
 # 🕹️ can I play?
@@ -64,19 +64,22 @@ $ python
 >>>
 >>> copilot.ask([{'content': 'how does murmur3 hash work?', 'role': 'user'}])
 {'status': 200, 'text': {'reply': 'Murmur3 hash is a non-cryptographic hash function that takes an input (usually a string or binary data) and produces a fixed-size hash value as output. It was designed to be fast and efficient while providing a good distribution of hash values.\n\nHere is a simplified explanation of how Murmur3 hash works:\n\n1. Initialization: The hash function is initialized with a seed value, which is an arbitrary number chosen by the user.\n\n2. Chunking: The input data is divided into chunks of 4 bytes (32 bits) each. If the input length is not a multiple of 4, padding is added to the last chunk.\n\n3. Processing: Each chunk is processed individually. The hash function performs a series of bitwise operations, such as XOR, shift, and multiplication, on the chunk and the seed value. These operations are designed to mix the bits of the chunk and distribute them across the hash value.\n\n4. Finalization: After processing all the chunks, a finalization step is performed. It involves additional bitwise operations to further mix the bits and ensure a good distribution of the hash value.\n\n5. Output: The resulting hash value is returned as the output of the Murmur3 hash function.\n\nMurmur3 hash has several desirable properties, such as good distribution, low collision rate, and high performance. It is commonly used in applications like hash tables, bloom filters, and data indexing.', 'usage': {'completion_tokens': 286, 'prompt_tokens': 15, 'total_tokens': 301}}}
->>>
->>> ## parameters are very familiar with the ones from OpenAI API requests: top_p, temperature, n, etc.
+```
+
+parameters are very familiar with the ones from OpenAI API requests: top_p, temperature, n, etc.:
+
+```python
 >>> copilot.ask(messages = [{'content': 'how does murmur3 hash work?', 'role': 'user'}], temperature = 0.6)
 {'status': 200, 'text': {'reply': 'MurmurHash3 is a non-cryptographic hash function that is designed to be fast and efficient while maintaining a good distribution of hash values. It was created by Austin Appleby in 2008.\n\nHere is a high-level overview of how MurmurHash3 works:\n\n1. Initialization: The hash function is initialized with a seed value that determines the output hash values.\n\n2. Chunk Processing: The input data is divided into fixed-length chunks (usually 4-byte or 8-byte chunks). These chunks are processed one at a time.\n\n3. Mixing: For each chunk, a series of bitwise operations, multiplications, and rotations are performed to mix the bits of the chunk. This mixing step helps to ensure that small changes in the input data result in significantly different hash values.\n\n4. Finalization: After all the chunks have been processed, a finalization step is performed to mix the remaining bits and produce the final hash value. This step typically involves applying additional bitwise operations and mixing the bits further.\n\n5. Output: The resulting hash value is returned as the output. It is usually a 32-bit or 64-bit integer, depending on the desired output size.\n\nMurmurHash3 is known for its speed and good distribution properties, making it suitable for a wide range of applications such as hash tables, hash-based data structures, and checksum verification. However, it is important to note that MurmurHash3 is not designed for cryptographic purposes, as it lacks the security properties required for cryptographic hash functions.', 'usage': {'completion_tokens': 307, 'prompt_tokens': 15, 'total_tokens': 322}}}
 ```
 
-to check out the real use in the production code, see how <img width="42" alt="image" src="https://github.com/tolitius/colalamo/assets/136575/5b80f72d-628e-4386-813d-5c8caa231e36"> jemma [uses colalamo](https://github.com/tolitius/jemma/blob/74a770a416a7fa69a445df79baee9be50ce3e8b5/jemma/thinker.py#L206-L234)
+to check out the real use in production code, see how <img width="42" alt="image" src="https://github.com/tolitius/colalamo/assets/136575/5b80f72d-628e-4386-813d-5c8caa231e36"> jemma [uses colalamo](https://github.com/tolitius/jemma/blob/74a770a416a7fa69a445df79baee9be50ce3e8b5/jemma/thinker.py#L206-L234) as a library
 
 
 
 ### as a server
 
-when it is used as a server, after it is installed all that is needed is to call it:
+when it is used as a server, after it is installed, all that is needed is to call it:
 
 ```bash
 $ colalamo
